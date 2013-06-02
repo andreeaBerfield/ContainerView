@@ -7,7 +7,7 @@
 //
 
 #import "SettingsView.h"
-
+#import "SettingsCommands.h"
 
 @implementation SettingsView
 
@@ -24,7 +24,20 @@
         [settingsLabel setTextColor:[UIColor blueColor]];
         settingsLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:settingsLabel];
+        
+        // add tap gesture recognizer
+        UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        tapGesture.numberOfTapsRequired = 1;
+        tapGesture.numberOfTouchesRequired = 1;
+        [self addGestureRecognizer:tapGesture];
     }
+    
     return self;
 }
+
+- (void) handleTap:(UIGestureRecognizer *)sender
+{
+    [SettingsCommands revealHideHomeView];
+}
+
 @end

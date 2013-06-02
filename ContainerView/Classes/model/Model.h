@@ -12,6 +12,12 @@
 /** Is the user logged in or not. */
 @property (nonatomic, assign) BOOL isUserLoggedIn;
 
+/** Whether or not the view is revealed.
+ YES => view is animated to the right in a FB like fashion.
+ NO => view is in the initial position.
+ By default this is NO. */
+@property (nonatomic, assign) BOOL revealHideHomeView;
+
 /** The instance of the model. */
 + (Model*) instance;
 

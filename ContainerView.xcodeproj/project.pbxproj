@@ -40,6 +40,8 @@
 		6DC2A717175AD9DF0002C736 /* LoginCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A716175AD9DF0002C736 /* LoginCommands.mm */; };
 		6DC2A718175AD9DF0002C736 /* LoginCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A716175AD9DF0002C736 /* LoginCommands.mm */; };
 		6DC2A71F175AF0C20002C736 /* LoginCommandTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A71E175AF0C10002C736 /* LoginCommandTests.mm */; };
+		6DC2A722175AFD4C0002C736 /* SettingsCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A721175AFD4C0002C736 /* SettingsCommands.mm */; };
+		6DC2A723175AFD4C0002C736 /* SettingsCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A721175AFD4C0002C736 /* SettingsCommands.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		6DC2A715175AD9DF0002C736 /* LoginCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCommands.h; sourceTree = "<group>"; };
 		6DC2A716175AD9DF0002C736 /* LoginCommands.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginCommands.mm; sourceTree = "<group>"; };
 		6DC2A71E175AF0C10002C736 /* LoginCommandTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginCommandTests.mm; sourceTree = "<group>"; };
+		6DC2A720175AFD4C0002C736 /* SettingsCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCommands.h; sourceTree = "<group>"; };
+		6DC2A721175AFD4C0002C736 /* SettingsCommands.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsCommands.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,8 @@
 			children = (
 				6DC2A715175AD9DF0002C736 /* LoginCommands.h */,
 				6DC2A716175AD9DF0002C736 /* LoginCommands.mm */,
+				6DC2A720175AFD4C0002C736 /* SettingsCommands.h */,
+				6DC2A721175AFD4C0002C736 /* SettingsCommands.mm */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				6DC2A70F175AD45E0002C736 /* HomeViewController.mm in Sources */,
 				6DC2A713175AD4700002C736 /* HomeView.mm in Sources */,
 				6DC2A717175AD9DF0002C736 /* LoginCommands.mm in Sources */,
+				6DC2A722175AFD4C0002C736 /* SettingsCommands.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +394,7 @@
 				6DC2A714175AD4700002C736 /* HomeView.mm in Sources */,
 				6DC2A718175AD9DF0002C736 /* LoginCommands.mm in Sources */,
 				6DC2A71F175AF0C20002C736 /* LoginCommandTests.mm in Sources */,
+				6DC2A723175AFD4C0002C736 /* SettingsCommands.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

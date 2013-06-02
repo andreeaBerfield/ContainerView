@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Andreea. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface HomeView : UIView
 
 @end

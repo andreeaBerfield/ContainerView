@@ -18,6 +18,7 @@ static Model* _instance = nil;
     {
         _instance = [[Model alloc] init];
         _instance.isUserLoggedIn = NO;
+        _instance.revealHideHomeView = NO;
     }
     
     return _instance;

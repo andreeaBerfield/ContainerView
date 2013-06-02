@@ -9,6 +9,7 @@
 
 @interface LoginCommands : NSObject
 
+/** Log in status changes. */
 +(void) login:(BOOL) loggedIn;
 
 @end

@@ -7,16 +7,12 @@
 //
 
 #import "HomeView.h"
+#import "Model.h"
+#import "SettingsCommands.h"
 
 #define SPACE_FROM_LEFT_WHEN_REVEALED 260
 
 @interface HomeView()
-
-/** Whether or not the view is revealed. 
-    YES => view is animated to the right in a FB like fashion.
-    NO => view is in the initial position.
-    By default this is NO. */
-@property (nonatomic, assign) BOOL isRevealed;
 
 @end
 
@@ -29,8 +25,6 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor redColor];
-        // initially the view is not revealed
-        self.isRevealed = NO;
         
         // add reveal/hide buton
         UIButton* revealHideButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 20, 80, 40)];
@@ -46,21 +40,51 @@
         homesLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:homesLabel];
         
+        // add observers
+        [self addObservers];
     }
     
     return self;
 }
 
+- (void) dealloc
+{
+    [self removeObservers];
+}
+
+- (void) addObservers
+{
+    /*
+     Register self to receive change notifications for the "instance.revealHideHomeView" property of
+     the 'Model' object and specify that both the old and new values of "instance.revealHideHomeView"
+     should be provided in the observe... method.*/
+    [Model addObserver:self forKeyPath:@"instance.revealHideHomeView"
+               options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+               context:nil];
+}
+
+- (void) removeObservers
+{
+    [self removeObserver:self forKeyPath:@"instance.revealHideHomeView"];
+}
+
+- (void) observeValueForKeyPath:(NSString*) keyPath ofObject:(id) object change:(NSDictionary*) change context:(void*) context
+{
+    if ([keyPath isEqualToString:@"instance.revealHideHomeView"])
+	{
+        [UIView animateWithDuration:0.2
+                         animations:^{
+                             CGRect frame = self.frame;
+                             frame.origin.x = Model.instance.revealHideHomeView ? SPACE_FROM_LEFT_WHEN_REVEALED : 0;
+                             self.frame = frame;
+                         } completion:^(BOOL finished) {
+                         }];
+    }
+}
+
 - (void) revealHideAction:(id) sender
 {
-    self.isRevealed = !self.isRevealed;
-    [UIView animateWithDuration:0.2
-                     animations:^{
-                         CGRect frame = self.frame;
-                         frame.origin.x = self.isRevealed ? SPACE_FROM_LEFT_WHEN_REVEALED : 0;
-                         self.frame = frame;
-                     } completion:^(BOOL finished) {
-                     }];
+    [SettingsCommands revealHideHomeView];
 }
 
 @end
