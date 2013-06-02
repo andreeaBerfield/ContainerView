@@ -31,7 +31,6 @@
 
 - (void) loginAction:(id) sender
 {
-    NSLog(@"Log in btn pressed");
     [LoginCommands login:YES];
 }
 

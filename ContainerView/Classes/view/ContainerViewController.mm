@@ -76,7 +76,7 @@
         // if you are logged in go to the home page, other wise to the log in page
         if (Model.instance.isUserLoggedIn)
         {
-            [self transitionToTheHomeViewController];
+            [self transitionFromTheLoginViewControllerToTheHomeViewController];
         }
         else
         {
@@ -107,6 +107,34 @@
     [self.view addSubview:self.homeViewController.view];
     [self addChildViewController:self.homeViewController];
     [self.homeViewController didMoveToParentViewController:self];
+}
+
+- (void) transitionFromTheLoginViewControllerToTheHomeViewController
+{
+    if (!self.homeViewController)
+    {
+        self.homeViewController = [[HomeViewController alloc] init];
+    }
+    
+    [self addChildViewController:self.homeViewController];
+    [self.loginViewController willMoveToParentViewController:nil];
+    
+    [self transitionFromViewController:self.loginViewController
+                      toViewController:self.homeViewController
+                              duration:0.4
+                               options:UIViewAnimationOptionTransitionCurlUp
+                            animations:^{
+                                //[self.loginViewController setAlpha:0.0];
+                            }
+                            completion:^(BOOL finished) {
+                                [self.loginViewController removeFromParentViewController];
+                                [self.homeViewController didMoveToParentViewController:self];
+                            }];
+}
+
+- (void) transitionFromTheHomeViewControllerToTheLoginViewController
+{
+    
 }
 
 - (void)viewDidLoad

@@ -20,7 +20,7 @@
 		6DC2A6DC175AC98E0002C736 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC2A6BC175AC98D0002C736 /* UIKit.framework */; };
 		6DC2A6DD175AC98E0002C736 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC2A6BE175AC98D0002C736 /* Foundation.framework */; };
 		6DC2A6E5175AC98E0002C736 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DC2A6E3175AC98E0002C736 /* InfoPlist.strings */; };
-		6DC2A6E8175AC98E0002C736 /* ContainerViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A6E7175AC98E0002C736 /* ContainerViewTests.m */; };
+		6DC2A6E8175AC98E0002C736 /* ContainerViewTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A6E7175AC98E0002C736 /* ContainerViewTests.mm */; };
 		6DC2A6F7175ACA540002C736 /* ContainerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A6F6175ACA540002C736 /* ContainerViewController.mm */; };
 		6DC2A6F8175ACA540002C736 /* ContainerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A6F6175ACA540002C736 /* ContainerViewController.mm */; };
 		6DC2A6FB175ACA6F0002C736 /* ContainerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A6FA175ACA6F0002C736 /* ContainerView.mm */; };
@@ -39,6 +39,7 @@
 		6DC2A714175AD4700002C736 /* HomeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A712175AD46F0002C736 /* HomeView.mm */; };
 		6DC2A717175AD9DF0002C736 /* LoginCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A716175AD9DF0002C736 /* LoginCommands.mm */; };
 		6DC2A718175AD9DF0002C736 /* LoginCommands.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A716175AD9DF0002C736 /* LoginCommands.mm */; };
+		6DC2A71F175AF0C20002C736 /* LoginCommandTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DC2A71E175AF0C10002C736 /* LoginCommandTests.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,7 @@
 		6DC2A6E2175AC98E0002C736 /* ContainerViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ContainerViewTests-Info.plist"; sourceTree = "<group>"; };
 		6DC2A6E4175AC98E0002C736 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DC2A6E6175AC98E0002C736 /* ContainerViewTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewTests.h; sourceTree = "<group>"; };
-		6DC2A6E7175AC98E0002C736 /* ContainerViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewTests.m; sourceTree = "<group>"; };
+		6DC2A6E7175AC98E0002C736 /* ContainerViewTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ContainerViewTests.mm; sourceTree = "<group>"; };
 		6DC2A6F5175ACA540002C736 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		6DC2A6F6175ACA540002C736 /* ContainerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ContainerViewController.mm; sourceTree = "<group>"; };
 		6DC2A6F9175ACA6F0002C736 /* ContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		6DC2A712175AD46F0002C736 /* HomeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HomeView.mm; sourceTree = "<group>"; };
 		6DC2A715175AD9DF0002C736 /* LoginCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCommands.h; sourceTree = "<group>"; };
 		6DC2A716175AD9DF0002C736 /* LoginCommands.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginCommands.mm; sourceTree = "<group>"; };
+		6DC2A71E175AF0C10002C736 /* LoginCommandTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginCommandTests.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +175,9 @@
 		6DC2A6E0175AC98E0002C736 /* ContainerViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				6DC2A71C175AF0C10002C736 /* control */,
 				6DC2A6E6175AC98E0002C736 /* ContainerViewTests.h */,
-				6DC2A6E7175AC98E0002C736 /* ContainerViewTests.m */,
+				6DC2A6E7175AC98E0002C736 /* ContainerViewTests.mm */,
 				6DC2A6E1175AC98E0002C736 /* Supporting Files */,
 			);
 			path = ContainerViewTests;
@@ -236,6 +239,14 @@
 				6DC2A6FE175ACE5B0002C736 /* SettingsView.mm */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		6DC2A71C175AF0C10002C736 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				6DC2A71E175AF0C10002C736 /* LoginCommandTests.mm */,
+			);
+			path = control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC2A6E8175AC98E0002C736 /* ContainerViewTests.m in Sources */,
+				6DC2A6E8175AC98E0002C736 /* ContainerViewTests.mm in Sources */,
 				6DC2A6F8175ACA540002C736 /* ContainerViewController.mm in Sources */,
 				6DC2A6FC175ACA6F0002C736 /* ContainerView.mm in Sources */,
 				6DC2A700175ACE5B0002C736 /* SettingsView.mm in Sources */,
@@ -375,6 +386,7 @@
 				6DC2A710175AD45E0002C736 /* HomeViewController.mm in Sources */,
 				6DC2A714175AD4700002C736 /* HomeView.mm in Sources */,
 				6DC2A718175AD9DF0002C736 /* LoginCommands.mm in Sources */,
+				6DC2A71F175AF0C20002C736 /* LoginCommandTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
