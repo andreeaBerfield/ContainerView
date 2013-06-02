@@ -14,6 +14,8 @@
 
 @interface HomeView()
 
+@property (nonatomic, strong) UILabel* firstRowLabel;
+
 @end
 
 
@@ -39,6 +41,23 @@
         [homesLabel setTextColor:[UIColor blueColor]];
         homesLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:homesLabel];
+        
+        // add first row label
+        self.firstRowLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 60, 300, 60)];
+        [self.firstRowLabel setText:@"This is the first row. You can tap on it to go to analyze."];
+        [self.firstRowLabel setTextColor:[UIColor blackColor]];
+        self.firstRowLabel.backgroundColor = [UIColor clearColor];
+        // make sure the label responds to the tap
+        self.firstRowLabel.userInteractionEnabled = YES;
+        self.firstRowLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.firstRowLabel.numberOfLines = 2;
+        [self addSubview:self.firstRowLabel];
+        
+        // add tap gesture recognizer to the 1st row label
+        UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapFirstRow:)];
+        tapGesture.numberOfTapsRequired = 1;
+        tapGesture.numberOfTouchesRequired = 1;
+        [self.firstRowLabel addGestureRecognizer:tapGesture];
         
         // add observers
         [self addObservers];
@@ -85,6 +104,11 @@
 - (void) revealHideAction:(id) sender
 {
     [SettingsCommands revealHideHomeView];
+}
+
+- (void) handleTapFirstRow:(UIGestureRecognizer*) sender
+{
+    NSLog(@"handleTapFirstRow");
 }
 
 @end
