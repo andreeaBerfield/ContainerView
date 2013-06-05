@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Andreea. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 /** The container view shows a settings subview. */
 @interface ContainerView : UIView

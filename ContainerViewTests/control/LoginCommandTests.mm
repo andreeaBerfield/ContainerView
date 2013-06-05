@@ -17,7 +17,7 @@
 
 @implementation LoginCommandTests
 
-- (void) login
+- (void) testLogin
 {
     [LoginCommands login:YES];
     STAssertTrue(Model.instance.isUserLoggedIn, @"Model.instance.isUserLoggedIn should be true");
